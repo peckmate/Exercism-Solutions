@@ -10,8 +10,6 @@ class Matrix
   end
 
   def parse_rows( input )
-    input.split( "\n" ).map do | row |
-      row.split( " " ).map( &:to_i )
-    end
+    input.each_line.map { | line | line.split.map(&:to_i) }
   end
 end
